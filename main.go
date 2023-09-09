@@ -19,6 +19,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			}
 			currentDay := time.Now().Weekday().String()
 			utcTime := time.Now().UTC()
+			currentTime := utcTime.Format("2006-01-02T15:04:05Z")
 			githubFileUrl := "https://github.com/thormiwa/hngstage1/blob/main/main.go"
 			githubRepoUrl := "https://github.com/thormiwa/hngtask1"
 			statusCode := http.StatusOK
@@ -26,7 +27,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			response := map[string]interface{}{
 				"slack_name": slackName,
 				"current_day": currentDay,
-				"utc_time": utcTime,
+				"utc_time": currentTime,
 				"track": track,
 				"github_file_url": githubFileUrl,
 				"github_repo_url": githubRepoUrl,
