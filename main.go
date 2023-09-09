@@ -19,7 +19,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			}
 			currentDay := time.Now().Weekday().String()
 			utcTime := time.Now().UTC()
-			githubFileUrl := "https://github.com/thormiwa/hngtask1/main.go"
+			githubFileUrl := "https://github.com/thormiwa/hngstage1/blob/main/main.go"
 			githubRepoUrl := "https://github.com/thormiwa/hngtask1"
 			statusCode := http.StatusOK
 
